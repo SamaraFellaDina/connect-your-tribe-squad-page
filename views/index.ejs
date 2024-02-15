@@ -1,13 +1,15 @@
 <%- include('./partials/head') %>
+<section>
+<h1>Vrienden <span>(60)</span></h1>
 
 <ul>
     <% data.forEach(person => {
         if(person.squad_id === 3 && person.role.includes("member")) { %>
           <li>
 
-            <a href="www.google.com">
-            <img src="<%= person.avatar %>" alt="profiel" id="profileImage" onerror="displayPlaceholder()">
-                <%= person.name %> <%= person.prefix %> <%= person.surname %>
+            <a href="">
+              <img src="<%= person.avatar %>" alt="profiel" id="profile-image" onerror="insertPlaceholder()">
+              <%= person.name %> <%= person.prefix %> <%= person.surname %>
             </a>
 
             %>
@@ -15,5 +17,6 @@
         <% }
       }) %>
 </ul>
+</section>
 
 <%- include('./partials/foot') %>

@@ -1,24 +1,8 @@
-// const profileDataPlaceHolder = "assets/images/placeholder.jpg";
-// const profileData = "<%= person.avatar %>";
-
-// if (profileData) {
-//     displayImage(profileData.img);
-// } else {
-//     displayPlaceholder();
-// }
-
-
-// function displayImage(profileData) {
-//     // Get the image element
-//     const imageElement = document.getElementById('profileImage');
-//     // Set the src attribute to the profile image URL
-//     imageElement.src = profileData;
-// }
-
-
-// function displayPlaceholder() {
-//     // Get the image element
-//     const imageElement = document.getElementById('profileImage');
-//     // Set the src attribute to the placeholder image URL
-//     imageElement.src = profileDataPlaceHolder;
-// }
+function insertPlaceholder() {
+    const placeHolderImage = "assets/images/placeholder.jpg";
+    const imageElement = document.getElementById('profile-image');
+    
+    if (imageElement) {
+        imageElement.src = placeHolderImage; // Set src to placeholder image URL
+    }
+}
