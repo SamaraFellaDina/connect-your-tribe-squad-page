@@ -20,7 +20,7 @@ app.use(express.static('public'))
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de FDND API op
-  fetchJson(apiUrl + '/Person').then((data) => {
+  fetchJson(apiUrl + '/person').then((data) => {
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
     response.render('index', data)
   })
@@ -49,3 +49,5 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
