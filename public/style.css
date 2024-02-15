@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
 * {
 
   box-sizing: border-box;
@@ -12,7 +10,7 @@
   --main-color-2:#669ACC;
   --secondary-color-1:#D0E0F0;
   --secondary-color-2:#fff;
-  --active-color-1:#0765BF;
+  --active-color-1:#00478a;
 
   --regular-font: verdana, arial, helvetica;
 }
@@ -23,11 +21,11 @@ header {
   padding: 1em;
   display: block;
   top: 0;
+}
 
-  & img {
-    width: 10em;
-    cursor: pointer;
-  }
+header img {
+  width: 10em;
+  cursor: pointer;
 }
 
 body{
@@ -36,41 +34,50 @@ body{
 
 main {
   background:var(--secondary-color-2);
+}
 
-  & h1 {
-    background: var(--main-color-2);
-    padding: .5em;
-    color: var(--secondary-color-2);
-    text-transform: uppercase;
-  }
+main h1 {
+  background: var(--main-color-2);
+  padding: .5em;
+  color: var(--secondary-color-2);
+  text-transform: uppercase;
+}
 
-  & ul {
-    padding: 1em;
-    display: grid;
-    grid-template-columns: 15em 15em 15em;
-    justify-content: center;
-    
-    list-style-type: none;
-    margin-block-start: 0;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0;
-  }
+main ul {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 15em 15em 15em;
+  justify-content: center;
+  
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+}
 
-  & a {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    flex-wrap: nowrap;
-  }
+main a {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  flex-wrap: nowrap;
 
-  & img {
-    width: 10em;
-    height: 10em;
-    object-fit: cover;
-  }
+  
+  font-weight: 900;
+  color: var(--active-color-1);
+  text-decoration: none;
+}
 
+main a:hover {
+  color: var(--main-color-2);
+  transition: .1s ease;
+}
+
+main img {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
 }

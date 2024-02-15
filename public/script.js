@@ -6,3 +6,7 @@ function insertPlaceholder() {
         imageElement.src = placeHolderImage; // Set src to placeholder image URL
     }
 }
+
+const elements = document.querySelectorAll('.profile');
+const count = elements.length;
+console.log(count);
