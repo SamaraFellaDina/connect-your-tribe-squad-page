@@ -5,9 +5,8 @@
         if(person.squad_id === 3 && person.role.includes("member")) { %>
           <li>
 
-            <img src="<%= person.avatar %>" alt="profiel">
-
-            <a href=".">
+            <a href="www.google.com">
+            <img src="<%= person.avatar %>" alt="profiel" id="profileImage" onerror="displayPlaceholder()">
                 <%= person.name %> <%= person.prefix %> <%= person.surname %>
             </a>
 
