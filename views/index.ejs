@@ -9,8 +9,19 @@
           <li>
 
             <a href="">
-              <img src="<%= person.avatar %>" alt="profiel" id="profile-image" onerror="this.onerror=null; this.src='assets/images/placeholder.jpg'">
-              <p><%= person.name %> <%= person.prefix %> <%= person.surname %></p>
+
+              <img 
+              src="<%= person.avatar %>" 
+              alt="profiel" id="profile-image" 
+              onerror="this.onerror=null; this.src='assets/images/placeholder.jpg'"
+              >
+
+              <p>
+                <%= person.name %> 
+                <%= person.prefix %> 
+                <%= person.surname %>
+              </p>
+
             </a>
 
             %>
