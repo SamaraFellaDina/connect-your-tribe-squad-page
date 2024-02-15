@@ -30,11 +30,38 @@ header {
   }
 }
 
-body {
+main {
+  padding: 1em;
   display: grid;
   place-items: center;
   font-family: var(--regular-font);
   background:var(--secondary-color-2);
+
+  & img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+  }
+
+  & li {
+
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
 
   & article.person {
     display: flex;

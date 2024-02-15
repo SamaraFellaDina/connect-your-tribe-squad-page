@@ -3,7 +3,14 @@
 <ul>
     <% data.forEach(person => {
         if(person.squad_id === 3 && person.role.includes("member")) { %>
-          <li><a href="./person/<%= person.id %>"><%= person.name %></a>
+          <li>
+
+            <img src="<%= person.avatar %>" alt="profiel">
+
+            <a href=".">
+                <%= person.name %> <%= person.prefix %> <%= person.surname %>
+            </a>
+
             %>
           </li>
         <% }
