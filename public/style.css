@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 * {
+  --main-color-1:#FCCF68;
+  --main-color-2:#669ACC;
+  --secondary-color-1:#D0E0F0;
+  --secondary-color-2:#fff;
+  --active-color-1:#0765BF;
+
+  
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+header {
+  background: var(--main-color-1);
+  width: 100%;
+  padding: 1em;
+
+  & img {
+    width: 10em;
+  }
 }
 
 body {
@@ -11,7 +28,7 @@ body {
   display: grid;
   place-items: center;
   font-family: Helvetica, Arial, sans-serif;
-  background: silver;
+  background:var(--secondary-color-2);
 
   & article.person {
     display: flex;
