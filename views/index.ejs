@@ -1,8 +1,9 @@
 <%- include('./partials/head') %>
 <section>
-<h1>Vrienden <span>(60)</span></h1>
+  <h1 id="profileCount">Vrienden (0)</h1>
 
 <ul class="profile">
+  
     <% data.forEach(person => {
         if(person.role.includes("member")) { %>
           <li>
