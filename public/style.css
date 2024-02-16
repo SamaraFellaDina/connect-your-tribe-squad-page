@@ -46,7 +46,8 @@ main h1 {
 main ul {
   padding: 1em;
   display: grid;
-  grid-template-columns: 15em 15em 15em;
+  grid-template-columns: 15em;
+  /* grid-template-rows: 15em; */
   justify-content: center;
   
   list-style-type: none;
@@ -80,4 +81,25 @@ main img {
   width: 10em;
   height: 10em;
   object-fit: cover;
+}
+
+@media (min-width: 768px )  {
+  main ul{
+    grid-template-columns: 15em 15em;
+
+  }
+}
+
+@media (min-width: 1024px )  {
+  main ul {
+    grid-template-columns: 15em 15em 15em;
+
+  }
+}
+
+@media (min-width: 1440px ) {
+  main ul {
+    grid-template-columns: 15em 15em 15em 15em;
+
+  }
 }

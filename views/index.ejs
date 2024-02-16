@@ -5,14 +5,16 @@
 <ul class="profile">
   
     <% data.forEach(person => {
-        if(person.role.includes("member")) { %>
+        <!-- if(person.role.includes("member")) -->
+         { %>
           <li>
 
             <a href="">
 
               <img 
               src="<%= person.avatar %>" 
-              alt="profiel" id="profile-image" 
+              alt="profiel" 
+              id="profile-image" 
               onerror="this.onerror=null; this.src='assets/images/placeholder.jpg'"
               >
 
