@@ -4,14 +4,13 @@
 
 
 <div class="profile-information">
-  <button href="/">
-    Terug
-  </button>
+<a href="/">Terug</a>
+
   <!-- Hier moet de goede person id staan -->
   <img src="https://avatars.githubusercontent.com/u/144009778?v=4">
 
   <!-- Hier moet de goede person id staan -->
-  <h1>Sammy Bensink</h1>
+  <h1><%= person.name %></h1>
   <p>Hoi! Ik ben Sammy en dit is mijn Bio :00</p>
 
 </div>
@@ -28,7 +27,7 @@
 
 <section>
 <h2>Mijn reacties</h2>
-<form method="post" action="">
+<form method="POST" action="/details/<%= person.id %>">
   <input name="profile-comment" id="profile-comment" value="Laat een reactie achter!">
   <button>Verstuur</button>
 </form>
