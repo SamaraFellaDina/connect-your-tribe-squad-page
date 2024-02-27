@@ -1,5 +1,4 @@
 * {
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -28,7 +27,7 @@ header img {
   cursor: pointer;
 }
 
-body{
+body {
   font-family: var(--regular-font);
 }
 
