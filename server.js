@@ -35,9 +35,10 @@ app.post('/', function (request, response) {
 // Maak een GET route voor person met een request parameter id
 app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de FDND API op
-  fetchJson(apiUrl + '/Person/' + request.params.id).then((data) => {
+  fetchJson(apiUrl + '/person/' + request.params.id).then((data) => {
+    console.log(data.data.name);
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
-    response.render('details', {person: data});
+    response.render('details', {person: data.data})
   })
 })
 
