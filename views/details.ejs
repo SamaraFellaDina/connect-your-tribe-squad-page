@@ -58,27 +58,32 @@
 
 
 <form method="POST" action="/details/<%= person.id %>">
-  <textarea name="comment" required></textarea>
+  <textarea name="message" required></textarea>
   <button type="submit" name="actie" value="verstuur">Verstuur</button>
 </form>
 
 </section>
 </div>
 
-<div>
-  <section>
-    <h2>Zie ook</h2>
-  </section>
-</div>
-<!-- <article class="person">
-  <header>
-    <h1>Hello</h1>
-    <p>my name is</p>
-  </header>
 
+<!-- <section>
+  <h2>Zie ook</h2>
+  <a href="/person/<%=person.id%>">
 
+    <img 
+    src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>"
+    alt="profiel" 
+    onerror="this.src='/assets/images/placeholder.jpg'"
+    >
 
-  <footer></footer>
-</article> -->
+    <h2>
+      <%= person.name %> 
+      <%= person.prefix %> 
+      <%= person.surname %>
+    </h2>
+
+  </a>
+  </div>
+</section> -->
 
 <%- include('./partials/foot') %>

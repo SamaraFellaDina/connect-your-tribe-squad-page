@@ -8,7 +8,7 @@
 <div class="friend-menu">
 <ul class="friend">
   
-    <% data.forEach(person => {
+    <% persons.forEach(person => {
         <!-- if(person.role.includes("member")) -->
          { %>
           <li>
@@ -21,11 +21,11 @@
               onerror="this.src='/assets/images/placeholder.jpg'"
               >
 
-              <p>
+              <h2>
                 <%= person.name %> 
                 <%= person.prefix %> 
                 <%= person.surname %>
-              </p>
+              </h2>
 
             </a>
 

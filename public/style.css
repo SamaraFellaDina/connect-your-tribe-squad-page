@@ -34,6 +34,7 @@ body {
 
 main {
   background:var(--secondary-color-2);
+  
 }
 
 main h1 {
@@ -41,6 +42,10 @@ main h1 {
   text-transform: uppercase;
 }
 
+section,
+div {
+  padding: 1em;
+}
 .friend-header{
   background: var(--main-color-2);
   padding: .5em;
@@ -62,6 +67,9 @@ main h1 {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 0;
+}
+.friend-menu h2 {
+  font-size: 1.3em;
 }
 
 .friend-menu a {
@@ -115,7 +123,6 @@ main h1 {
 .friend-information {
   background-color: var(--secondary-color-1);
   display: block;
-  padding: 1em;
 }
 
 .friend-information img {
@@ -128,8 +135,6 @@ main h1 {
 .friend-information h1 {
   background-color: none;
   color: var(--secondary-color-3);
+  text-transform: none;
 }
 
-.friend-information p {
-  background-color: var(--active-color-1);
-}
