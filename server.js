@@ -37,7 +37,7 @@ app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de FDND API op
   fetchJson(apiUrl + '/Person/' + request.params.id).then((data) => {
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
-    response.render('person', data)
+    response.render('details', data)
   })
 })
 
