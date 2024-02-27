@@ -36,7 +36,7 @@ app.post('/', function (request, response) {
 app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de FDND API op
   fetchJson(apiUrl + '/person/' + request.params.id).then((data) => {
-    console.log(data.data.name);
+    // console.log(data.data.name);
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
     response.render('details', {person: data.data})
   })
@@ -52,3 +52,7 @@ app.listen(app.get('port'), function () {
 })
 
 
+
+const messages = []
+
+app

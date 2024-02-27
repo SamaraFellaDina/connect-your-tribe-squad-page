@@ -1,8 +1,12 @@
 <%- include('./partials/head') %>
-<section>
-  <h1 id="profileCount">Vrienden (0)</h1>
 
-<ul class="profile">
+<section class="friend-header">
+  <h1 id="friend-count">Vrienden (0)</h1>
+
+</section>
+
+<div class="friend-menu">
+<ul class="friend">
   
     <% data.forEach(person => {
         <!-- if(person.role.includes("member")) -->
@@ -12,10 +16,9 @@
             <a href="/person/<%=person.id%>">
 
               <img 
-              src="<%= person.avatar %>" 
+              src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>"
               alt="profiel" 
-              id="profile-image" 
-              onerror="this.onerror=null; this.src='assets/images/placeholder.jpg'"
+              onerror="this.src='/assets/images/placeholder.jpg'"
               >
 
               <p>

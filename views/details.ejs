@@ -1,17 +1,27 @@
 <%- include('./partials/head') %>
 
 
+<section class="friend-header">
+  <a href="/">Terug</a>
+</section>
 
+<div class="friend-information">
 
-<div class="profile-information">
-<a href="/">Terug</a>
 
   <!-- Hier moet de goede person id staan -->
-  <img src="https://avatars.githubusercontent.com/u/144009778?v=4">
+  <img 
+  src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>"
+  alt="profiel" 
+  onerror="this.src='/assets/images/placeholder.jpg'"
+  >
 
   <!-- Hier moet de goede person id staan -->
-  <h1><%= person.name %></h1>
-  <p>Hoi! Ik ben Sammy en dit is mijn Bio :00</p>
+  <h1>
+    <%= person.name %> 
+    <%= person.prefix %> 
+    <%= person.surname %>
+  </h1>
+  <p><%= person.bio %></p>
 
 </div>
 
@@ -23,14 +33,35 @@
     <li>Squad: 1D</li>
     <li>Woont in: Utrecht</li>
   </ul>
+  
+  <h2>Socials</h2>
+  <ul>
+    <li>Instagram</li>
+    <li>LinkedIn</li>
+    <li>Github</li>
+  </ul>
 </section>
 
 <section>
-<h2>Mijn reacties</h2>
+<h2>Reacties</h2>
+  <div>
+    <% if (person.custom.messages && person.custom.messages.length) { %>
+      <ol>
+        <% person.custom.messages.forEach(message => { %>
+          <li><%= message %></li>
+        <% }) %>
+      </ol>
+    <% } else { %>
+      <p>Er zijn nog geen reacties.</p>
+    <% } %>
+  </div>  
+
+
 <form method="POST" action="/details/<%= person.id %>">
-  <input name="profile-comment" id="profile-comment" value="Laat een reactie achter!">
-  <button>Verstuur</button>
+  <textarea name="comment" required></textarea>
+  <button type="submit" name="actie" value="verstuur">Verstuur</button>
 </form>
+
 </section>
 </div>
 
