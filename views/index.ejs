@@ -7,12 +7,13 @@
 
 <div class="friend-menu">
 <ul class="friend">
+
+
   
-    <% persons.forEach(person => {
+    <% personsdata.forEach(person => {
         <!-- if(person.role.includes("member")) -->
          { %>
           <li>
-
             <a href="/person/<%=person.id%>">
 
               <img 
@@ -26,6 +27,9 @@
                 <%= person.prefix %> 
                 <%= person.surname %>
               </h2>
+              <!-- <p>
+                <%- person.bio %>
+              </p> -->
 
             </a>
 

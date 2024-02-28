@@ -44,7 +44,8 @@
 
 <section>
 <h2>Reacties</h2>
-  <div>
+<%= messages %>
+  <!-- <div>
     <% if (person.custom.messages && person.custom.messages.length) { %>
       <ol>
         <% person.custom.messages.forEach(message => { %>
@@ -54,11 +55,13 @@
     <% } else { %>
       <p>Er zijn nog geen reacties.</p>
     <% } %>
-  </div>  
+  </div>   -->
 
 
-<form method="POST" action="/details/<%= person.id %>">
+<form method="POST" action="/messages/<%= person.id %>">
   <textarea name="message" required></textarea>
+  <!-- <input type="text" name="tekst"> -->
+  <!-- <input type="tel" name="telefoonnnummer"> -->
   <button type="submit" name="actie" value="verstuur">Verstuur</button>
 </form>
 
