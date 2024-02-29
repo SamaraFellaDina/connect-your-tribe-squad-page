@@ -26,26 +26,13 @@ app.use(express.static('public'))
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de FDND API op
-  fetchJson('https://fdnd.directus.app/items/person/').then((apiData) => {
+  fetchJson(apiUrl + '/person/').then((apiData) => {
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
     response.render('index', {
       personsdata: apiData.data,
-      // squads: squadData.data,
-      messages: messages
     })
   })
 })
-
-app.post('/', function(request, response) {
-  // Voeg het nieuwe bericht toe aan de messages array
-  messages.push(request.body.bericht)
-
-  // Redirect hierna naar de homepage
-  response.redirect(303, '/')
-})
-
-
-
 
 // Maak een GET route voor person met een request parameter id
 app.get('/person/:id', function (request, response) {
@@ -64,7 +51,7 @@ app.get('/person/:id', function (request, response) {
 })
 
 app.post('/messages/:id', function(request,response) {
-  //wat moet er gebeure als een gebruiker post naar joehoe?
+  //wat moet er gebeure als een gebruiker post naar messages?
   console.log(request.params.id)
   console.log(request.body)
 
@@ -75,44 +62,47 @@ app.post('/messages/:id', function(request,response) {
 
 })
 
-app.post('/details/:id', function(request,response) {
-  fetchJson(apiUrl + "/person" + request.params.id).then((apiResponse) => {
+// Waarvoor is dit nodig?
 
-  try {
-    apiResponse.data.custom = JSON.parse(apiResponse.data.custom)
-  } catch (e) {
-    apiResponse.data.custom = {}
-  }
 
-  // Stap 2: Gebruik de data uit het formulier
-  // Deze stap zal voor iedereen net even anders zijn, afhankelijk van de functionaliteit
+// app.post('/details/:id', function(request,response) {
+//   fetchJson(apiUrl + "/person" + request.params.id).then((apiResponse) => {
 
-  // Controleer eerst welke actie is uitgevoerd, aan de hand van de submit button
-  // Dit kan ook op andere manieren, of in een andere POST route
-  if (request.body.actie == 'verstuur') {
+//   try {
+//     apiResponse.data.custom = JSON.parse(apiResponse.data.custom)
+//   } catch (e) {
+//     apiResponse.data.custom = {}
+//   }
 
-    // Als het custom object nog geen messages Array als eigenschap heeft, voeg deze dan toe
-    if (!apiResponse.data.custom.messages) {
-      apiResponse.data.custom.messages = []
-    }}
+//   // Stap 2: Gebruik de data uit het formulier
+//   // Deze stap zal voor iedereen net even anders zijn, afhankelijk van de functionaliteit
 
-    // Voeg een nieuwe message toe voor deze persoon, aan de hand van het bericht uit het formulier
-    apiResponse.data.custom.messages.push(request.body.message)
+//   // Controleer eerst welke actie is uitgevoerd, aan de hand van de submit button
+//   // Dit kan ook op andere manieren, of in een andere POST route
+//   if (request.body.actie == 'verstuur') {
 
-    fetch(apiUrl + "/person" + request.params.id, {
-      method: "patch",
-      body: json.stringify({
-        custom: apiResponse.data.custom
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      }
+//     // Als het custom object nog geen messages Array als eigenschap heeft, voeg deze dan toe
+//     if (!apiResponse.data.custom.messages) {
+//       apiResponse.data.custom.messages = []
+//     }}
+
+//     // Voeg een nieuwe message toe voor deze persoon, aan de hand van het bericht uit het formulier
+//     apiResponse.data.custom.messages.push(request.body.message)
+
+//     fetch(apiUrl + "/person" + request.params.id, {
+//       method: "patch",
+//       body: json.stringify({
+//         custom: apiResponse.data.custom
+//       }),
+//       headers: {
+//         'Content-type': 'application/json; charset=UTF-8'
+//       }
       
-    }).then((patchResponse) => {
-      response.redirect(303, '/person/' + request.params.id)
-    })
-  }) 
-})
+//     }).then((patchResponse) => {
+//       response.redirect(303, '/person/' + request.params.id)
+//     })
+//   }) 
+// })
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)

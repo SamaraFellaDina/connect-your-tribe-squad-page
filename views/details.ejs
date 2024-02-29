@@ -21,18 +21,14 @@
     <%= person.prefix %> 
     <%= person.surname %>
   </h1>
-  <p><%= person.bio %></p>
 
 </div>
 
 <div>
 <section>
   <h2>Over mij</h2>
-  <ul>
-    <li>Leeftijd: 21 jaar</li>
-    <li>Squad: 1D</li>
-    <li>Woont in: Utrecht</li>
-  </ul>
+  <p><%= person.bio %></p>
+
   
   <h2>Socials</h2>
   <ul>
@@ -59,7 +55,7 @@
 
 
 <form method="POST" action="/messages/<%= person.id %>">
-  <textarea name="message" required></textarea>
+  <textarea name="message" required placeholder="Laat een bericht achter! :0"></textarea>
   <!-- <input type="text" name="tekst"> -->
   <!-- <input type="tel" name="telefoonnnummer"> -->
   <button type="submit" name="actie" value="verstuur">Verstuur</button>
@@ -68,25 +64,5 @@
 </section>
 </div>
 
-
-<!-- <section>
-  <h2>Zie ook</h2>
-  <a href="/person/<%=person.id%>">
-
-    <img 
-    src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>"
-    alt="profiel" 
-    onerror="this.src='/assets/images/placeholder.jpg'"
-    >
-
-    <h2>
-      <%= person.name %> 
-      <%= person.prefix %> 
-      <%= person.surname %>
-    </h2>
-
-  </a>
-  </div>
-</section> -->
 
 <%- include('./partials/foot') %>
