@@ -5,7 +5,7 @@
   <a href="/">Terug</a>
 </section>
 
-<div class="friend-information">
+<div class="friend-main-information">
 
 
   <!-- Hier moet de goede person id staan -->
@@ -22,21 +22,32 @@
     <%= person.surname %>
   </h1>
 
+  <form method="POST" action="/person/<%= person.id %>">
+    <% if (person.custom.like) { %>
+      <button type="submit" name="actie" value="vind-ik-niet-leuk">👎 vind-ik-niet-leuk</button>
+    <% } else { %>
+      <button type="submit" name="actie" value="vind-ik-leuk">👍 vind-ik-leuk</button>
+    <% } %>
+  </form>
+
 </div>
 
+<div class="friend-information">
 <div>
-<section>
+  <section class="friend-bio">
   <h2>Over mij</h2>
   <p><%= person.bio %></p>
-
+  </section>
   
+  <section>
   <h2>Socials</h2>
   <ul>
     <li>Instagram</li>
     <li>LinkedIn</li>
     <li>Github</li>
   </ul>
-</section>
+  </section>
+</div>
 
 <section>
 <h2>Reacties</h2>
